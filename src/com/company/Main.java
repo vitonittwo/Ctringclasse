@@ -21,7 +21,7 @@ public class Main {
 	// 2) Using another String object
 
 	String str1 = "Using another String object";
-	String str2 = new String(str1);
+	String str2 = str1;
 	System.out.println(str2);
 
 		// 3) Using new Keyword
@@ -55,41 +55,51 @@ public class Main {
 				"you must use the '+' sign at the end of each line"); // line carryover does not occur!!!
 	System.out.println(ass);
 
-		   // char charAt(int index)
-	System.out.println("Returns the character at the specified index");
-	System.out.println("Method Syntax: public char charAt(int index)");
-	System.out.println("index - the index of the character to get from the string array");
+		   // char charAt(int index) - Returns the character at the specified index
 		char ind5 = stra.charAt(5);
-		char ind11 = strb.charAt(11);
 	System.out.println("Fifth line character is " + ind5);
-	System.out.println("Eleventh line character is " + ind11);
+	// Example the charAt() method using
+		palindrome();
 
 		// int compareTo(String anotherString) - Compares this String to another Object.
 	System.out.println("compareTo() Method:");
 
-		int comp = stra.compareTo(strb);
-	System.out.println("Result of comparing stra and strb is " + comp);
+	System.out.println("Result of comparing stra and strb is " + (stra.compareTo(strb)));
 		int lena = stra.length();
 	System.out.println("String stra length is " + lena);
 		int lenb = strb.length();
 	System.out.println("String strb length is " + lenb);
 	System.out.println("Arithmetic subtraction lenb with lena is: " + (lenb - lena));
 
-		comp = stra.compareTo(strq);
-	System.out.println("Result of comparing stra and strq is " + comp);
+	System.out.println("Result of comparing stra and strq is " + (stra.compareTo(strq)));
 	System.out.println("String stra length is " + lena);
 		int lenq = strq.length();
 	System.out.println("String strq length is " + lenq);
 	System.out.println("Arithmetic subtraction lenq with lena is: " + (lenq - lena));
 
-		comp = stra.compareTo(stra);
-	System.out.println("Result of comparing stra and stra is " + comp);
-		comp = strb.compareTo(strq);
-	System.out.println("Result of comparing strb and strq is " + comp);
-		comp = strq.compareTo(strb);
-	System.out.println("Result of comparing strq and strb is " + comp);
+	System.out.println("Result of comparing stra and stra is " + (stra.compareTo(stra)));
+
+	System.out.println("Result of comparing strb and strq is " + (strb.compareTo(strq)));
+
+	System.out.println("Result of comparing strq and strb is " + (strq.compareTo(strb)));
 
 
 
-    }
+	 }
+	// below are descriptions of the methods
+	public static void palindrome() {
+		String palindrome = "This String we can to read contrariwise";
+		int lon = palindrome.length();
+		char[] charArrayBefore = new char[lon];
+		char[] charArrayAfter = new char[lon];
+		for (int i = 0; i < lon; i++) {
+			charArrayBefore[i] = palindrome.charAt(i);
+		}
+		for (int j = 0; j < lon; j++) {
+			charArrayAfter[j] = charArrayBefore[lon - 1 - j];
+		}
+		String contrariwisePalindrome = new String(charArrayAfter);
+		System.out.println("Palindrome result is: " + contrariwisePalindrome);
+	}
+
 }
