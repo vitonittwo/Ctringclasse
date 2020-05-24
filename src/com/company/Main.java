@@ -1,6 +1,11 @@
 package com.company;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
+import java.util.Formatter;
+import java.util.GregorianCalendar;
+
+import static java.util.Calendar.DECEMBER;
 
 public class Main {
 
@@ -140,6 +145,35 @@ public class Main {
 		System.out.println(stra.substring(5, 17));
 		System.out.print("Method substring() return value 2: ");
 		System.out.println(stra.substring(5));
+
+		// String Formatting
+		System.out.printf("%s = %d ", "Vitalijs", 35);
+		System.out.printf("\n" + "My name is: %s%n",  "Vitalijs");
+
+		StringBuilder sbuf = new StringBuilder();
+		Formatter fmt = new Formatter(sbuf);
+		fmt.format("PI = %f%n", Math.PI); // %f - floating point	decimal number
+		System.out.print(sbuf.toString());
+
+		Formatter fmy = new Formatter(sbuf);
+		fmy.format("q = %g%n", Double.MAX_VALUE); // %g - floating point decimal number,
+		System.out.print(sbuf.toString()); // possibly in scientific notation depending on the precision and value.
+
+		String hel = String.format("|%2$s|", 150, "  Hello  ");
+		System.out.println(hel);
+		String hes = String.format("%d", 150);
+		System.out.println(hes);
+		String hed = String.format("|%50d|", 150);
+		System.out.println(hed);
+		String hef = String.format("|%-20d|", 150);
+		System.out.println(hef);
+		String heg = String.format("|%020d|", 150);
+		System.out.println(heg);
+
+		// String vit = new String();
+		Calendar vit = new GregorianCalendar(1959, DECEMBER,9);
+		String birth = String.format("Vitally birthday is: %1$tb %1$te %1$tY, vit");
+		System.out.println(birth);
 
 	}
 	// below are descriptions of the methods
