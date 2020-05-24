@@ -172,7 +172,7 @@ public class Main {
 
 		// String vit = new String();
 		Calendar vit = new GregorianCalendar(1959, DECEMBER,9);
-		String birth = String.format("Vitally birthday is: %1$tb %1$te %1$tY, vit");
+		String birth = String.format("Vitally birthday is: %1$tb %1$te, %1$tY, vit");
 		System.out.println(birth);
 
 	}
